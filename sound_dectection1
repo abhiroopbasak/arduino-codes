@@ -1,0 +1,23 @@
+const int Led=12;
+const int Sound=7;
+int sval=0;
+void setup() 
+{
+  pinMode(Led,OUTPUT);
+  pinMode(Sound,INPUT);
+}
+
+void loop() 
+{
+sval=digitalRead(Sound);
+if(sval==LOW)
+{
+  digitalWrite(Led,HIGH);
+  Serial.println(" WARNING!! WHEEZING DETECTED");
+}
+else
+{
+  digitalWrite(Led,LOW);
+  Serial.println(" patient in steady state");
+}
+}
